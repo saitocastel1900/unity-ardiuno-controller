@@ -19,7 +19,7 @@ void loop() {
 
 
 ## ArdiunoとUnityでシリアル通信をしてみる
--UniRxを使用する
+-UniRxを使用する(UniRxを利用しない方法はありますが、設定が大変なのでここでは利用しないことにしました)
 
 ## Processingともシリアル通信をしてみる
 
