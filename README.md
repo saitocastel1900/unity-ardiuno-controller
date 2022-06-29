@@ -21,7 +21,7 @@ void loop() {
 
 
 ## ArdiunoとUnityでシリアル通信をしてみる
--UniRxを使用する(UniRxを利用しない方法はありますが、設定が大変なのでここでは利用しないことにしました)
+-UniRxを使用する(UniRxを利用しない方法はありますが、設定が大変なのでここでは利用しないことにしました)  
 おもちゃらぼ　さんを基に作成したので、おもちゃらぼ　さんの記事を見た方が速いかもです:https://nn-hokuson.hatenablog.com/entry/2017/09/12/192024  
 ```
 byte x = 0;
@@ -45,6 +45,59 @@ Serial.print("\r\n");
 }
 ```
 **beginで転送速度を設定、printで値を転送しています**  
+
+```
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading;
+using System;
+using System.IO.Ports;
+using UnityEngine;
+using UniRx;
+
+public class Serial : MonoBehaviour {
+
+    [SerializeField]private string portName;
+    [SerializeField]private int baurate;
+
+    private SerialPort serial;
+    private bool isLoop = true;
+
+    void Start () 
+    {
+        this.serial = new SerialPort (portName, baurate, Parity.None, 8, StopBits.One);
+
+        try
+        {
+            this.serial.Open();
+            //別スレッドで実行  
+            Scheduler.ThreadPool.Schedule (() => ReadData ()).AddTo(this);
+        } 
+        catch(Exception e)
+        {
+            Debug.Log ("ポートが開けませんでした。設定している値が間違っている場合があります");
+        }
+    }
+	
+    //データ受信時に呼ばれる
+    public void ReadData()
+    {
+        while (this.isLoop)
+        {
+            //ReadLineで読み込む
+            string message = this.serial.ReadLine();
+            Debug.Log( message );
+        }
+    }
+
+    void OnDestroy()
+    {
+        this.isLoop = false;
+        this.serial.Close ();
+    }
+}
+```
+**Serialを使うために using System.IO.Portsとしていますが、Portsを扱うためには事前にNETを設定する必要があります**  
 
 ## 加速度センサを使ってボールを動かしてみる
 
