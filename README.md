@@ -23,7 +23,28 @@ void loop() {
 ## ArdiunoとUnityでシリアル通信をしてみる
 -UniRxを使用する(UniRxを利用しない方法はありますが、設定が大変なのでここでは利用しないことにしました)
 おもちゃらぼ　さんを基に作成したので、おもちゃらぼ　さんの記事を見た方が速いかもです:https://nn-hokuson.hatenablog.com/entry/2017/09/12/192024  
+```
+byte x = 0;
+byte y= 0;
+byte z = 0;
 
+void setup() {
+Serial.begin(9600);
+}
+
+void loop() {
+x++;
+z--;
+
+Serial.print(x);
+Serial.print(",");
+Serial.print(y);
+Serial.print(",");
+Serial.print(z);
+Serial.print("\r\n");
+}
+```
+**beginで転送速度を設定、printで値を転送しています**  
 
 ## 加速度センサを使ってボールを動かしてみる
 
