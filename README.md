@@ -15,7 +15,9 @@ void loop() {
     delay(1000);
 }
 ```
-**13番ピンはボード上にあるLEDを指します。**
+**13番ピンはボード上にあるLEDを指します。**  
+
+![0](https://user-images.githubusercontent.com/96648305/176534709-bd2c9bf2-2d8b-493e-8c12-ba726bae2cbc.jpg)  
 
 
 ## ArdiunoとUnityでシリアル通信をしてみる
