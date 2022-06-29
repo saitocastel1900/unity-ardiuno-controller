@@ -2,6 +2,21 @@
 Ardiunoをコントローラーとしたゲームのプロジェクトです。ご自由にお使いください。
 
 ## まずはLチカ
+```
+const int LED_PIN=13;
+
+void setup() {
+    pinMode( LED_PIN, OUTPUT );
+}
+void loop() {
+    digitalWrite( LED_PIN, HIGH );
+    delay(100);
+    digitalWrite( LED_PIN, LOW );
+    delay(1000);
+}
+```
+**13番ピンはボード上にあるLEDを指します。**
+
 
 ## ArdiunoとUnityでシリアル通信をしてみる
 -UniRxを使用する
