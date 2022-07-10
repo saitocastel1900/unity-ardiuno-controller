@@ -98,8 +98,18 @@ public class Serial : MonoBehaviour {
 }
 ```
 **Serialを使うために using System.IO.Portsとしていますが、Portsを扱うためには事前にNETを設定する必要があります**  
+## 加速度センサを使ってみる
 
-## 加速度センサを使ってボールを動かしてみる
+## 加速度センサを使ってボールを動かしてみる(KXR94-2050)
+#### 加速度センサとは？
+- 1秒あたりの速度変化を検出できる(似ているセンサとして角速度センサがあるが、角速度は1秒間あたり何回転しているのかを検出できる)
+- 
+
+```
+
+```
+![タイトルなし](https://user-images.githubusercontent.com/96648305/178145761-4d0b9718-516a-467a-97be-cbb0bf932b1d.png)
+
 
 # 参考資料
 https://rikoubou.hatenablog.com/entry/2018/02/08/174506  
