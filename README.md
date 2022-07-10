@@ -98,7 +98,6 @@ public class Serial : MonoBehaviour {
 }
 ```
 **Serialを使うために using System.IO.Portsとしていますが、Portsを扱うためには事前にNETを設定する必要があります**  
-## 加速度センサを使ってみる
 
 ## 加速度センサを使ってボールを動かしてみる(KXR94-2050)
 #### 加速度センサとは？
@@ -106,11 +105,29 @@ public class Serial : MonoBehaviour {
 - これを利用すればunity上でオブジェクトを動かしたりできる
 
 ```
+void setup() {
+  Serial.begin(9600);
+}
+ 
+void loop() {
 
+  float x =  analogRead(A0)/100.0;
+  float y =  analogRead(A1)/100.0;
+  float z =  analogRead(A2)/100.0;
+
+  Serial.print("X : ");
+  Serial.print(x);
+  Serial.print(" Y : ");
+  Serial.print(y);
+  Serial.print(" Z : ");
+  Serial.println(z);
+ 
+  delay(1000);
+}
 ```
 ![image](https://user-images.githubusercontent.com/96648305/178147182-82ecca18-9d6d-4437-a7da-eb1aac86a8d1.png)
 
-
+### 加速度センサを使ってボールを動かしてみる
 
 # 参考資料
 https://rikoubou.hatenablog.com/entry/2018/02/08/174506  
