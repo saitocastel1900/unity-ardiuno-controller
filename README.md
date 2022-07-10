@@ -109,5 +109,6 @@ https://takahi5.hatenablog.com/entry/2014/05/21/194122
 https://framesynthesis.jp/blog/2014/12/17/  
 https://algorithm.joho.info/arduino/kxm52/  
 http://zattouka.net/GarageHouse/micon/Arduino/Acceleration/Acceleration.htm  
+https://www.petitmonte.com/robot/howto_kxr94_2050.html
 
 
