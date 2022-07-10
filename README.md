@@ -103,12 +103,13 @@ public class Serial : MonoBehaviour {
 ## 加速度センサを使ってボールを動かしてみる(KXR94-2050)
 #### 加速度センサとは？
 - 1秒あたりの速度変化を検出できる(似ているセンサとして角速度センサがあるが、角速度は1秒間あたり何回転しているのかを検出できる)
-- 
+- これを利用すればunity上でオブジェクトを動かしたりできる
 
 ```
 
 ```
-![タイトルなし](https://user-images.githubusercontent.com/96648305/178145761-4d0b9718-516a-467a-97be-cbb0bf932b1d.png)
+![image](https://user-images.githubusercontent.com/96648305/178147182-82ecca18-9d6d-4437-a7da-eb1aac86a8d1.png)
+
 
 
 # 参考資料
